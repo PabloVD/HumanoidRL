@@ -30,6 +30,7 @@ for i in range(num_steps):
     images.append(img)
 
 if make_gif:
-    fps = 30
+    fps = 15
     duration = num_steps/fps
-    imageio.mimsave("humanoid_rl.gif", [np.array(img) for i, img in enumerate(images)], duration=duration)
+    ims = np.array([img for i, img in enumerate(images)])[::2]
+    imageio.mimsave("humanoid_rl.gif", ims, duration=duration)

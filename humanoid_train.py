@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore', category=UserWarning, message='TypedStorage is
 
 name_exp = "PPO"
 name_model = "ppo_humanoid"
-total_timesteps = 1000000
+total_timesteps = 10000000
 device = "cpu"
 
 env = gym.make("Humanoid-v4", render_mode="rgb_array")
