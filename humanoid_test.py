@@ -6,7 +6,7 @@ import imageio
 import numpy as np
 
 name_model = "ppo_humanoid"
-num_steps = 200
+num_steps = 400
 make_gif = True
 if make_gif: 
     render_type = "rgb_array" 
