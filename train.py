@@ -1,6 +1,6 @@
 # See more here https://stable-baselines3.readthedocs.io/en/master/guide/examples.html
 import gymnasium as gym
-from stable_baselines3 import A2C, PPO, SAC
+from stable_baselines3 import SAC
 import os
 import warnings
 from stable_baselines3.common.callbacks import CheckpointCallback
@@ -21,11 +21,11 @@ checkpoint_callback = CheckpointCallback(save_freq=50000, save_path='./callbacks
 env = gym.make("Humanoid-v4", render_mode="rgb_array")
 
 if os.path.exists(name_model+".zip"):
-    print("Loading previous model")
-    #model = PPO.load(name_model, env=env, device=device, policy_kwargs=policy_kwargs)
+    print("Loading previous model:",name_model+".zip")
+    #model = SAC.load(name_model, env=env, device=device, policy_kwargs=policy_kwargs)
     model = SAC.load(name_model, env=env, device=device)
 else:
-    #model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./PPO_logs", device=device, policy_kwargs=policy_kwargs)
+    #model = SAC("MlpPolicy", env, verbose=1, tensorboard_log="./PPO_logs", device=device, policy_kwargs=policy_kwargs)
     model = SAC("MlpPolicy", env, verbose=1, tensorboard_log="./logs", device=device)
 print(model.policy)
 
