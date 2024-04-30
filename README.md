@@ -1,4 +1,4 @@
-# Humanoid_RL
+# HumanoidRL
 
 Train reinforcement learning algorithms with Humanoid from Mujoco using StableBaselines3 
 
